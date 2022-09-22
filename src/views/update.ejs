@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href="/css/bootstrap.css" />
+    <linh rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <title>Update User</title>
+</head>
+<body>
+    <div>
+        <form action="/postUpdateUser/user/<%= DataUser.ID %>" class="row g-3" method="post">
+          <div class="col-sm-6">
+            <label for="inputEmail4" class="form-label">First Name</label>
+            <input type="text" class="form-control" name="firstName" value="<%= DataUser.firstName %>">
+          </div>
+          <div class="col-sm-6">
+            <label for="inputPassword4" class="form-label">Last Name</label>
+            <input type="text" class="form-control" name="LastName" value="<%= DataUser.lastName %> ">
+          </div>
+          <div class="col-12">
+            <label for="inputAddress" class="form-label">Email</label>
+            <input type="text" class="form-control" name="Email" value="<%= DataUser.email %>  ">
+          </div>
+          <div class="col-12">
+            <label for="inputAddress" class="form-label">address</label>
+            <input type="address" class="form-control" name="Address" placeholder="1234 Main St" value="<%= DataUser.address %> ">
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Update</button>
+          </div>
+        </form>
+      </div>
+</body>
+</html>
