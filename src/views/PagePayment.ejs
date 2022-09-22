@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/pay.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="shortcut icon" href="images/favicon.png" type="">
+  <title> Feane </title>
+</head>
+<body>
+  <div>
+    <h1 >Đặt Hàng</h1>
+    <a href="/">trở về trang chủ</a>
+  </div>
+  <div class="row">
+    <div class="col-100">
+      <div class="container">
+        <form action="/momopay" method="get">
+  
+          <div class="row">
+            <div class="col-md-6">
+              <h3>Thông tin đặt hàng</h3>
+              <label for="fname"><i class="fa fa-user"></i> Họ và Tên</label>
+              <input type="text" id="fname" name="firstname" placeholder="...">
+              <label for="email"><i class="fa fa-envelope"></i> Email</label>
+              <input type="text" id="email" name="email"  placeholder="...">
+              <label for="adr"><i class="fa fa-address-card-o"></i> Địa Chỉ</label>
+              <input type="text" id="adr" name="address" placeholder="...">
+              <label for="city"><i class="fa fa-institution"></i> Thành Phố</label>
+              <input type="text" id="city" name="city" placeholder="...">
+  
+            </div>
+  
+            <div class="col-md-6">
+                <h3>Tổng số đơn hàng :
+                  <span class="price" style="color:black">
+                    <i class="fa fa-shopping-cart"><%= countItem %></i>
+                    <b></b>
+                  </span>
+                </h3>
+                <% for(let i = 0 ; i < Itemcheck.rowsAffected ; i ++) { %>
+                <p>Đơn hàng <%= i+1 %><span class="price"><%= Itemcheck.recordset[i].Gia %>đ</span></p>
+        
+                <hr>
+                <% } %>
+                <p>Tổng cộng <span class="price" style="color:black"><b><%= monney %>đ</b></span></p>
+            </div>
+  
+          </div>
+          <label>
+            <input type="checkbox" checked="checked" name="sameadr">Ship tới địa chỉ đã đặt
+          </label>
+          <button type="submit">Continue to checkout</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
